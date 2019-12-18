@@ -106,6 +106,14 @@ module Spree
       payment.credit_allowed > 0
     end
 
+    # The API endpoint in Solidus expects these methods to exist.
+    def month; end
+    def year; end
+    def cc_type; end
+    def last_digits; end
+    def gateway_customer_profile_id; end
+    def gateway_payment_profile_id; end
+
     private
 
 
