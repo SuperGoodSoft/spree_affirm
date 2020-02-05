@@ -23,5 +23,9 @@ module SpreeAffirm
     initializer "spree.spree_affirm.payment_methods", :after => "spree.register.payment_methods" do |app|
         app.config.spree.payment_methods << Spree::Gateway::Affirm
     end
+
+    if SolidusSupport.api_available?
+      paths["app/views"] << "lib/views/api"
+    end
   end
 end
